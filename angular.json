@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "angular-select-dropdown"
+    }
+  },
+  "defaultProject": "angular-select-dropdown",
+  "cli": {
+    "analytics": false
+  }
 }

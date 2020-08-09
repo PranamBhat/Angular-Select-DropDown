@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormBuilder, Validators } from "@angular/forms";
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,36 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'angular-select-dropdown';
+  isSubmitted = false;
+  // Country Names
+  Country: any = ['Australia', 'Canada', 'Germany', 'India', 'Japan', 'Netherlands', 'Norway', 'Switzerland', 'United Kingdom', 'United States']
+  constructor(public fb: FormBuilder) { }
+
+  registrationForm = this.fb.group({
+    countryName: ['', [Validators.required]]
+  })
+
+  // Country selection
+  changeCountry(e) {
+    this.countryName.setValue(e.target.value, {
+      onlySelf: true
+    })
+  }
+
+  // Getter method for accessing form controls
+  get countryName() {
+    return this.registrationForm.get('countryName');
+  }
+
+  onSubmit() {
+    this.isSubmitted = true;
+    if (!this.registrationForm.valid) {
+      return false;
+    } else {
+      alert(JSON.stringify(this.registrationForm.value))
+    }
+
+  }
+
+
 }
