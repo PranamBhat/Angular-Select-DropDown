@@ -2,6 +2,8 @@
 
 <img src="/screenshots/Angular-Select-Dropdown-1.JPG" />
 
+
+
 <img src="/screenshots/Angular-Select-Dropdown-2.JPG" />
 
 
